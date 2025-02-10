@@ -15,7 +15,7 @@ class Role_model extends CI_Model
         $this->db->join('permissions', 'role_permissions.permission_id = permissions.id');
         $this->db->where('role_permissions.role_id', $role_id);
         $query = $this->db->get();
-        return $query->result_array();
+        return $query->result_array(); // get permision name array
     }
 
     public function get_user_role($user_id) {
@@ -23,6 +23,6 @@ class Role_model extends CI_Model
         $this->db->from('user_roles');
         $this->db->where('user_roles.user_id', $user_id);
         $query = $this->db->get();
-        return $query->row()->role_id;
+        return $query->row()->role_id; // get user role
     }
 }

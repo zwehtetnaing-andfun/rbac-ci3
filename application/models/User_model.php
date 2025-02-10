@@ -5,7 +5,7 @@ class User_model extends CI_Model{
 	public $username;
 	public $email;
 	public $password;
-
+	
 	public function __construct() {
         $this->load->database();
     }

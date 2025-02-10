@@ -33,7 +33,7 @@ class Post extends CI_Controller{
 	}
 
 	public function create() {
-
+		// Check if user has permission to create post
         if (!in_array('create_post', array_column($this->permissions, 'name'))) {
 			$this->session->set_flashdata('message',"You don't have access to create post");
 			redirect('/post');
@@ -66,6 +66,8 @@ class Post extends CI_Controller{
     }
 
     public function edit($id) {
+
+		// Check if user has permission to edit post
 		if (!in_array('edit_post', array_column($this->permissions, 'name'))) {
 			$this->session->set_flashdata('message',"You don't have access to edit post");
 			redirect('/post');
@@ -100,6 +102,8 @@ class Post extends CI_Controller{
     }
 
     public function delete($id) {
+
+		// Check if user has permission to delete post
 		if (!in_array('delete_post', array_column($this->permissions, 'name'))) {
 			$this->session->set_flashdata('message',"You don't have access to delete post");
 			redirect('/post');
