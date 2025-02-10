@@ -23,8 +23,8 @@ class User extends CI_Controller{
 	public function store()
 	{
 
-		$this->form_validation->set_rules('username', 'Username', 'required|min_length[3]|max_length[50]|is_unique["users","username"]');
-		$this->form_validation->set_rules('email', 'Email', 'required|min_length[3]|valid_email|is_unique["users","email"]');
+		$this->form_validation->set_rules('username', 'Username', 'required|min_length[3]|max_length[50]|is_unique[users.username]');
+		$this->form_validation->set_rules('email', 'Email', 'required|min_length[3]|valid_email|is_unique[users.email]');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
 
 		if ($this->form_validation->run() == FALSE)
